@@ -1,0 +1,62 @@
+@model Cekilis
+
+@{
+    ViewData["Title"] = "Çekiliş Detayları";
+    var sonuclar = ViewBag.Sonuclar as List<Sonuc>;
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>@Model.CekilisAdi</h2>
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p><strong>Oluşturma Tarihi:</strong> @Model.OlusturmaTarihi?.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Kazanan Sayısı:</strong> @Model.KazananSayisi</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Yedek Sayısı:</strong> @Model.YedekSayisi</p>
+                    <p><strong>Kullanıcı:</strong> @Model.Kullanici?.AdSoyad</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3 class="text-center mb-4">Katılımcılar</h3>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach (var katilimci in Model.Katilimcilar)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>@katilimci.AdSoyad</strong>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h3 class="text-center mb-4">Sonuçlar</h3>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach (var sonuc in sonuclar)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span><strong>@sonuc.SonucTipi:</strong> @sonuc.Katilimci.AdSoyad</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/Cekilis/Sonuclar" class="btn btn-info btn-lg">Sonuçlar Sayfasına Dön</a>
+    </div>
+</div>

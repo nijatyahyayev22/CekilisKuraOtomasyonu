@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4 mb-4">Cekilis Kura Otomasyonu</h1>
+    <p class="lead">Hemen başlayın! İster yeni bir çekiliş ekleyin, ister sonuçları görüntüleyin.</p>
+    
+    <div class="row mt-5">
+        <div class="col-md-6 col-lg-3 m-auto">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Çekiliş Ekle</h5>
+                    <p class="card-text">Yeni bir çekiliş oluşturun ve başlatın.</p>
+                    <a class="btn btn-success w-100" asp-area="" asp-controller="Cekilis" asp-action="Ekle">Çekiliş Ekle</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 m-auto">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Sonuçları Görüntüle</h5>
+                    <p class="card-text">Geçmiş çekiliş sonuçlarını inceleyin.</p>
+                    <a class="btn btn-info w-100" asp-area="" asp-controller="Cekilis" asp-action="Sonuclar">Sonuçları Görüntüle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

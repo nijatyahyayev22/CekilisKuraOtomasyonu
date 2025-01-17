@@ -1,0 +1,25 @@
+
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+<div class="text-center">
+    <h2 class="mb-4" style="font-family: 'Arial', sans-serif;">Kayıt Ol</h2>
+    <form method="post" class="mx-auto" style="max-width: 400px; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #fff;">
+        <div class="form-group mb-4">
+            <label for="adSoyad" style="font-weight: bold;">Ad Soyad</label>
+            <input type="text" class="form-control" id="adSoyad" name="adSoyad" placeholder="Ad Soyad" required style="border-radius: 5px;"/>
+        </div>
+        <div class="form-group mb-4">
+            <label for="email" style="font-weight: bold;">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required style="border-radius: 5px;"/>
+        </div>
+        <div class="form-group mb-4">
+            <label for="sifre" style="font-weight: bold;">Şifre</label>
+            <input type="password" class="form-control" id="sifre" name="sifre" placeholder="Şifre" required style="border-radius: 5px;"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="border-radius: 5px; background-color: #007bff; border-color: #007bff;">Kayıt Ol</button>
+        <div class="mt-3">
+            <a class="btn btn-secondary btn-block" asp-area="" asp-controller="Kullanici" asp-action="Giris" style="border-radius: 5px; background-color: #6c757d; border-color: #6c757d;">Giriş Yap</a>
+        </div>
+    </form>
+</div>

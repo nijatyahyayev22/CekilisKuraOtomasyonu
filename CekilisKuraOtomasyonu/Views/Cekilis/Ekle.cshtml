@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Yeni Çekiliş Ekle";
+}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Yeni Çekiliş Ekle</h2>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+
+
+    <form method="post" action="/Cekilis/Ekle" style="max-width: 600px; margin: auto;">
+        <div class="form-group mb-3">
+            <label for="cekilisAdi" class="form-label">Çekiliş Adı</label>
+            <input type="text" class="form-control" id="cekilisAdi" name="CekilisAdi" placeholder="Çekiliş Adı" required />
+        </div>
+        <div class="form-group mb-3">
+            <label for="kazananSayisi" class="form-label">Kazanan Sayısı</label>
+            <input type="number" class="form-control" id="kazananSayisi" name="KazananSayisi" placeholder="Kazanan Sayısı" required />
+        </div>
+        <div class="form-group mb-3">
+            <label for="yedekSayisi" class="form-label">Yedek Sayısı</label>
+            <input type="number" class="form-control" id="yedekSayisi" name="YedekSayisi" placeholder="Yedek Sayısı" required />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Katılımcılar</label>
+            <div id="katilimcilar-container">
+                <div class="katilimci-item mb-2">
+                    <input type="text" class="form-control mb-1" name="Katilimcilar[0].AdSoyad" placeholder="Ad Soyad" required />
+                </div>
+            </div>
+            <button type="button" class="btn btn-secondary mt-2" id="add-katilimci-btn">Katılımcı Ekle</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Çekilişi Çek</button>
+    </form>
+</div>
+
+<script>
+    let katilimciIndex = 1;
+    document.getElementById('add-katilimci-btn').addEventListener('click', function () {
+        const container = document.getElementById('katilimcilar-container');
+        const newKatilimci = document.createElement('div');
+        newKatilimci.classList.add('katilimci-item', 'mb-2');
+        newKatilimci.innerHTML = `
+            <input type="text" class="form-control mb-1" name="Katilimcilar[${katilimciIndex}].AdSoyad" placeholder="Ad Soyad" required />
+        `;
+        container.appendChild(newKatilimci);
+        katilimciIndex++;
+    });
+</script>
