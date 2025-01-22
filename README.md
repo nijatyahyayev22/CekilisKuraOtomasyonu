@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=__4bptNmIQg (Youtube video linki)
+https://www.youtube.com/watch?v=IAIgQE3OdHQ (Youtube video linki)
 ![WhatsApp Image 2025-01-22 at 21 53 09](https://github.com/user-attachments/assets/5babe9f2-b04b-4e6e-a5ab-bb1e8684518d)
 ![WhatsApp Image 2025-01-22 at 21 53 10](https://github.com/user-attachments/assets/81c01633-00f3-4919-806c-b170bd73add5)
 ![WhatsApp Image 2025-01-22 at 21 53 10 (1)](https://github.com/user-attachments/assets/dad7d1fc-df12-4a8f-ba6f-9fa53c648443)
